@@ -1,0 +1,61 @@
+6/3/16
+Brianna - Project Manager
+Ethan, Megan and Trason - Developers
+Ashaunte and Jeremy - Designers
+
+We're working at a steady pace, html and css look good.
+I suggest we start focusing on some JS. Right now our game isn't playable yet. 
+We need to get the game to be in a playable state by Monday, prepare for presentations on Tuesday and present on Wednesday.
+============================================================================
+
+Suggested tasks:
+----------------
+Brianna - 
+Create a new folder called images (to store images)
+Create a new folder called music (to store music)
+Create a new folder called js (to store JavaScript)
+Create a new folder called css (to store CSS files)
+After doing so, fix all the links in the html and css files so the resources work properly again
+
+Ethan -
+Try and get the music playing.
+Use the audio tag: http://www.w3schools.com/tags/tag_audio.asp
+Add it to game.html and add any song that you've uploaded
+
+Ashaunte - 
+After working on creating the objects for each artist, get started on making the image blurry.
+The documentation on image blur can be found here: http://www.inserthtml.com/2012/06/css-filters/
+The idea is we can use jQuery to manipulate the blur style as time passes.
+
+Meagan -
+We we're able to create the buttons as intended. 
+One small thing to change is the add the "answer" class on each of the buttons we're appending on line 39.
+
+After that you've probably noticed that they only work the first time.
+If we try clicking on the buttons the second time, nothing is happening.
+The easiest way of explaining this is that the the jQuery click method will work on content present on the page.
+Since we have generated the buttons using jQuery, the jQuery click method did not get applied to our new buttons.
+The way to avoid this issue is to bind the click event so that it works on the content whether or not it's present.
+
+We have to use the jQuery "on" function.
+Here is how it's used.
+$( document ).on( "click", ".answer", function() {
+  // code that runs after button with answer class is clicked
+});
+The idea is we will add the code inside the click method (lines 16-18) into this code block.
+Then we can replace the click method clode (lines 15-19) with the code above.
+
+If you try playing the game now you should notice that the buttons are working as intended.
+
+Trason -
+Help out Meagan with getting javascript working on the site
+
+Jeremy -
+Help your fellow team members with any problems they are working on.
+
+Notes on getting the score from the request parameter URL
+var myUrl = window.location.href;
+var myScore = myUrl.substring(myUrl.indexOf("=") + 1);
+
+Reload music
+http://www.w3schools.com/tags/av_met_load.asp
